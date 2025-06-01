@@ -1,0 +1,13 @@
+<html>
+    <head><title>Events</title></head>
+    <body>
+        <h2>All Events</h2>
+        {% for event in events%}
+        <div>
+            <h3>{{event.title}</h3>
+            <p>{{event.date}}-{{event.location}}</p>
+            <p>{{event.description}}</p>
+        </div>
+    </body>
+    {% end for %}
+</html>
