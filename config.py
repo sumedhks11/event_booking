@@ -1,4 +1,6 @@
 import os
-SQLA1CHEMY_DATABASE_URI='mysql+pymysql://username:password@localhost/eventdb'
-SQLA1CHEMY_TRACK_MODIFICATIONS=False
-SECRET_KEY=os.urandom(24)
+
+class Config:
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'your_secret_key'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///event_booking.db'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
