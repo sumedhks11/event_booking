@@ -1,13 +1,17 @@
-<html>
-    <head><title>Events</title></head>
-    <body>
-        <h2>All Events</h2>
-        {% for event in events%}
-        <div>
-            <h3>{{event.title}</h3>
-            <p>{{event.date}}-{{event.location}}</p>
-            <p>{{event.description}}</p>
+<div class="container mt-4">
+  <h2>Upcoming Events</h2>
+  <div class="row">
+    {% for event in events %}
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5>{{ event.title }}</h5>
+            <p><strong>Date:</strong> {{ event.date }}</p>
+            <p><strong>Location:</strong> {{ event.location }}</p>
+            <p>{{ event.description }}</p>
+          </div>
         </div>
-    </body>
-    {% end for %}
-</html>
+      </div>
+    {% endfor %}
+  </div>
+</div>
